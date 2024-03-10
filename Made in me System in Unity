@@ -11,3 +11,12 @@ float DecimalP_specifiedFloor(float num,int decimal_point)
     return temporary_num / temporary_multiplier;
 
 }
+
+bool PercentageTest(float percentage)
+{
+    float random = Random.value;
+    if(random <= percentage)
+        return true;
+    else
+        return false;
+}
