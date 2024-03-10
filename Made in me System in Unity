@@ -12,6 +12,7 @@ float DecimalP_specifiedFloor(float num,int decimal_point)
 
 }
 
+//確率
 bool PercentageTest(float percentage)
 {
     float random = Random.value;
