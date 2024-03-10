@@ -1,0 +1,13 @@
+//小数点を指定して切り捨てをおこなう
+float DecimalP_specifiedFloor(float num,int decimal_point)
+{
+    //decimal_point(第二引数（小数点指定引数）) - 1を指数として、10に累乗させる
+    //これにより、decimal_pointが１の場合も対応できるようになる(10^0 = 1)
+    int temporary_multiplier = (int)Mathf.Pow(10f, decimal_point - 1);
+    //ここで一時的に先ほど宣言した変数を第一引数（数指定）にかけ合わせて、それを切り捨てる
+    //なぜ掛け合わせるか…この関数を作った根幹の理由になるが、本来C#では小数点を指定しての切り捨てはできず、
+    //小数点以下を切り捨てることしかできなかったから
+    float temporary_num = Mathf.Floor(num * temporary_multiplier);
+    return temporary_num / temporary_multiplier;
+
+}
